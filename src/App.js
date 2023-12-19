@@ -1,0 +1,33 @@
+import React from 'react';
+
+import logo from './logo.svg';
+// import './App.css';
+import { useState } from 'react';
+import { Button } from './components/Button';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const add = function () {
+    setCount(count + 1);
+  };
+
+  const sub = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
+  return (
+    <div>
+      <h1>My name is Nischal</h1>
+      <Button>Click Me!!</Button>
+      <button onClick={sub}>-</button>
+      <span>{count}</span>
+      <button onClick={add}>+</button>
+      {count !== 0 ? <div> {count} is {count % 2 === 0 ? 'Even' : 'Odd'} </div> : null}
+    </div>
+  );
+}
+
+export default App;
